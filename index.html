@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -7,14 +8,13 @@
 <meta name="description" content="GEAGRO E.I.R.L. - Análisis de suelos, hidroponía, abonos orgánicos e I+D agrícola. Tacna - Perú" />
 <style>
 :root{--primary:#2f7a3e; --accent:#a66b2a; --bg:#f6fbf7; --muted:#556b55}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--bg);color:#14311f}
-.header-hero{position:relative;height:84vh;min-height:480px;display:none;flex;align-items:center;justify-content:center;overflow:hidden}
+*{box-sizing:border-box} body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;background:var(--bg);color:#14311f}
+.header-hero{position:relative;height:84vh;min-height:480px;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 1.2s ease-in-out;opacity:0}
 .hero-slide.show{opacity:1}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,30,15,0.25),rgba(15,30,15,0.45))}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(15,30,15,0.25), rgba(15,30,15,0.45));}
 .header-content{position:relative;z-index:6;text-align:center;color:#fff;padding:20px}
-.logo{max-width:260px;margin:0 auto 6px;display:none} /* logo oculto */
+.logo{max-width:260px;margin:0 auto 6px}
 .lema{font-size:20px;color:rgba(255,255,255,0.9);margin-top:6px}
 nav.top{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);display:flex;align-items:center;padding:12px 20px;box-shadow:0 6px 18px rgba(19,24,19,0.06);z-index:10}
 nav .brand{display:flex;align-items:center;gap:12px}
@@ -24,99 +24,131 @@ nav a{text-decoration:none;color:#133017;font-weight:700;padding:8px 12px;border
 nav a:hover{background:#eaf6ec}
 .section{max-width:1100px;margin:28px auto;padding:24px;background:white;border-radius:12px;box-shadow:0 8px 28px rgba(19,24,19,0.04)}
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.service{padding:14px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#f7fff7);border:1px solid #edf7ee}
+.service{padding:14px;border-radius:10px;background:linear-gradient(180deg, #ffffff, #f7fff7);border:1px solid #edf7ee}
 .service h3{color:var(--primary);margin:0 0 8px}
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .footer{text-align:center;color:var(--muted);padding:18px;margin-top:18px}
-audio#bg-music{position:fixed;bottom:18px;left:18px;z-index:50;width:180px;opacity:0.8}
+.play-control{position:fixed;right:18px;bottom:18px;background:rgba(255,255,255,0.9);border-radius:999px;padding:8px 10px;box-shadow:0 6px 18px rgba(19,24,19,0.08);display:flex;gap:8px;align-items:center;z-index:30}
+.play-control button{background:var(--primary);color:white;border:0;padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:700}
+@media(max-width:800px){.header-hero{height:64vh}.logo{max-width:190px} .gallery{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <nav class="top">
-  <div class="brand">
-    <img src="gea-foto%20perfil%20-%20verde%20oscuro.png" alt="Logo GEAGRO">
-    <strong>GEAGRO E.I.R.L.</strong>
-  </div>
-  <div class="menu">
-    <a href="#servicios">Servicios</a>
-    <a href="#galeria">Galería</a>
-    <a href="#contacto">Contacto</a>
-  </div>
+  <div class="brand"><img src="logo.png" alt="GEAGRO logo"><strong>GEAGRO E.I.R.L.</strong></div>
+  <div class="menu"><a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a></div>
 </nav>
 
-<header class="header-hero">
-  <div class="hero-slide show" style="background-image:url('gea-cover.png')"></div>
-  <div class="hero-slide" style="background-image:url('gea-cover2.png')"></div>
+<header class="header-hero" id="inicio">
+  <div class="hero-slide" id="slide1" style="background-image:url('gea-cover.png')"></div>
+  <div class="hero-slide" id="slide2" style="background-image:url('gea-cover2.png')"></div>
   <div class="hero-overlay"></div>
   <div class="header-content">
-    <img src="gea-foto%20perfil%20-%20verde%20oscuro.png" alt="GEAGRO Logo" class="logo">
-    <h1>GEAGRO E.I.R.L.</h1>
-    <p class="lema">Genera Bienestar</p>
+    <img src="logo.png" class="logo" alt="GEAGRO logo">
+    <h1 style="margin:0;font-size:36px;color:#fff">GEAGRO E.I.R.L.</h1>
+    <div class="lema">Genera Bienestar</div>
+    <div style="margin-top:16px"><a href="#contacto" style="background:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:800;color:#133017">Cotizar servicio</a></div>
   </div>
 </header>
 
-<section id="servicios" class="section">
-  <h2>Servicios</h2>
+<section class="section" id="nosotros">
+  <h2 style="color:var(--primary)">Sobre GEAGRO</h2>
+  <p style="color:var(--muted)">GEAGRO E.I.R.L. es una empresa técnica ubicada en Tacna, Perú, enfocada en brindar soluciones agrícolas sostenibles mediante análisis, desarrollo experimental y asesorías técnicas. Nuestro equipo profesional aplica prácticas adecuadas a cada contexto para optimizar rendimiento y salud del agroecosistema.</p>
+</section>
+
+<section class="section" id="servicios">
+  <h2 style="color:var(--primary)">Servicios</h2>
   <div class="services-grid">
-    <div class="service">
-      <h3>Análisis de Suelos</h3>
-      <p>Evaluación detallada de parámetros físicos y químicos del suelo para optimizar la producción agrícola.</p>
-    </div>
-    <div class="service">
-      <h3>Planes de Fertilización</h3>
-      <p>Diseño de planes técnicos personalizados según el cultivo, clima y tipo de suelo.</p>
-    </div>
-    <div class="service">
-      <h3>Hidroponía</h3>
-      <p>Asesoría e instalación de sistemas hidropónicos sostenibles y productivos.</p>
-    </div>
-    <div class="service">
-      <h3>Abonos Orgánicos</h3>
-      <p>Producción y promoción de abonos naturales que regeneran el suelo y mejoran su fertilidad.</p>
-    </div>
-    <div class="service">
-      <h3>Apoyo a la Agricultura</h3>
-      <p>Capacitación y acompañamiento técnico para agricultores y asociaciones.</p>
-    </div>
-    <div class="service">
-      <h3>Investigación y Desarrollo</h3>
-      <p>Proyectos experimentales orientados a la innovación y sostenibilidad agrícola.</p>
-    </div>
+    <div class="service"><h3>Análisis de suelos</h3><p>Recepción, pretratamiento y diagnóstico técnico para manejo nutrimental.</p></div>
+    <div class="service"><h3>Planes de fertilización</h3><p>Programas personalizados por cultivo, fase y tipo de suelo.</p></div>
+    <div class="service"><h3>Hidroponía</h3><p>Diseño y asesoramiento en sistemas productivos en agua.</p></div>
+    <div class="service"><h3>Abonos orgánicos</h3><p>Formulación y capacitación en producción y uso de biofertilizantes.</p></div>
+    <div class="service"><h3>Apoyo a la agricultura</h3><p>Asistencia técnica en campo y capacitación a productores.</p></div>
+    <div class="service"><h3>I+D Experimental</h3><p>Proyectos de investigación aplicada y pruebas de campo para innovación agrícola.</p></div>
   </div>
 </section>
 
-<section id="galeria" class="section">
-  <h2>Galería</h2>
+<section class="section" id="proyectos">
+  <h2 style="color:var(--primary)">Proyectos y galería</h2>
   <div class="gallery">
-    <img src="gea-cover.png" alt="Campo agrícola GEAGRO" style="width:100%;border-radius:10px">
-    <img src="gea-cover2.png" alt="Producción sostenible" style="width:100%;border-radius:10px">
+    <img src="gea-cover.png" alt="proyecto 1" style="width:100%;border-radius:10px">
+    <img src="gea-cover2.png" alt="proyecto 2" style="width:100%;border-radius:10px">
   </div>
 </section>
 
-<section id="contacto" class="section">
-  <h2>Contacto</h2>
-  <p><strong>Correo:</strong> bio.generabienestar@gmail.com</p>
-  <p><strong>Teléfono:</strong> +51 936851181</p>
-  <p><strong>Ciudad:</strong> Tacna - Perú</p>
+<section class="section" id="contacto">
+  <h2 style="color:var(--primary)">Contacto</h2>
+  <p style="color:var(--muted)">Para solicitudes y cotizaciones, escríbenos o envíanos un mensaje por WhatsApp:</p>
+  <p><strong>Correo:</strong> <a href="mailto:bio.generabienestar@gmail.com">bio.generabienestar@gmail.com</a><br><strong>WhatsApp:</strong> <a href="https://wa.me/51936851181" target="_blank">+51 936 851 181</a><br><strong>Ubicación:</strong> Tacna - Perú</p>
+  <form onsubmit="sendMail(event)" style="display:flex;flex-direction:column;gap:8px;max-width:680px">
+    <input id="name" placeholder="Nombre o entidad" required style="padding:10px;border-radius:8px;border:1px solid #e6e6e6">
+    <input id="district" placeholder="Distrito / Región" style="padding:10px;border-radius:8px;border:1px solid #e6e6e6">
+    <select id="service" style="padding:10px;border-radius:8px;border:1px solid #e6e6e6">
+      <option>Análisis de suelos</option><option>Planes de fertilización</option><option>Hidroponía</option><option>Abonos orgánicos</option><option>Apoyo a la agricultura</option><option>I+D experimental</option>
+    </select>
+    <textarea id="msg" rows="4" placeholder="Describe tu requerimiento" style="padding:10px;border-radius:8px;border:1px solid #e6e6e6"></textarea>
+    <input id="email" placeholder="Correo electrónico" style="padding:10px;border-radius:8px;border:1px solid #e6e6e6">
+    <input id="phone" placeholder="Teléfono o WhatsApp" style="padding:10px;border-radius:8px;border:1px solid #e6e6e6">
+    <button type="submit" style="background:var(--primary);color:white;padding:10px;border-radius:8px;border:0;font-weight:700">Enviar solicitud</button>
+  </form>
 </section>
 
 <footer class="footer">
-  © 2025 GEAGRO E.I.R.L. — Genera Bienestar
+  <div>© GEAGRO E.I.R.L. — Tacna, Perú</div>
+  <div style="margin-top:8px;color:var(--muted)">Correo: <a href="mailto:bio.generabienestar@gmail.com">bio.generabienestar@gmail.com</a> · WhatsApp: <a href="https://wa.me/51936851181" target="_blank">+51 936 851 181</a></div>
 </footer>
 
-<audio id="bg-music" autoplay loop controls>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0b7e4e3f4c.mp3?filename=gentle-breeze-ambient-background-11062.mp3" type="audio/mpeg">
-</audio>
+<div class="play-control" id="audioControl">
+  <button id="toggleBtn">🔊 Silenciar</button>
+</div>
+
+<audio id="bgAudio" src="ambient_background.wav" loop autoplay></audio>
 
 <script>
-const slides = document.querySelectorAll('.hero-slide');
-let current = 0;
-setInterval(()=>{
-  slides[current].classList.remove('show');
-  current = (current + 1) % slides.length;
-  slides[current].classList.add('show');
+// Simple slideshow
+let slides = document.querySelectorAll('.hero-slide');
+let idx = 0;
+slides[idx].classList.add('show');
+setInterval(function(){
+  slides[idx].classList.remove('show');
+  idx = (idx+1)%slides.length;
+  slides[idx].classList.add('show');
 },6000);
+
+// Smooth scroll for nav
+document.querySelectorAll('nav a').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// Audio control with button
+const audio = document.getElementById('bgAudio');
+const btn = document.getElementById('toggleBtn');
+let muted=false;
+btn.addEventListener('click', function(){
+  muted = !muted;
+  audio.muted = muted;
+  btn.textContent = muted ? '🔈 Reproducir' : '🔊 Silenciar';
+});
+
+// Contact form via mailto
+function sendMail(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value || 'Sin nombre';
+  const district = document.getElementById('district').value || 'No indicado';
+  const service = document.getElementById('service').value;
+  const msg = document.getElementById('msg').value || 'No hay detalle';
+  const email = document.getElementById('email').value || 'No indicado';
+  const phone = document.getElementById('phone').value || 'No indicado';
+  const subject = encodeURIComponent('Solicitud de servicio - ' + service + ' (' + name + ')');
+  const body = encodeURIComponent('Nombre/Entidad: ' + name + '\n' + 'Distrito/Región: ' + district + '\n' + 'Servicio requerido: ' + service + '\n' + 'Teléfono/WhatsApp: ' + phone + '\n' + 'Correo remitente: ' + email + '\n\n' + 'Detalle:\n' + msg + '\n\n' + '--- Enviado desde la web de GEAGRO E.I.R.L.');
+  const mailto = 'mailto:bio.generabienestar@gmail.com?subject=' + subject + '&body=' + body;
+  window.location.href = mailto;
+  alert('Se abrirá tu cliente de correo para enviar la solicitud. Si no abre, por favor envía tu consulta a bio.generabienestar@gmail.com');
+}
 </script>
 
 </body>
